@@ -75,13 +75,14 @@ RUN sed -i -e 's#^KIBANA_HOME=$#KIBANA_HOME='$KIBANA_HOME'#' /etc/init.d/kibana 
 
 ADD ./elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 
-#ENV ES_HOME /usr/share/elasticsearch
-#WORKDIR ${ES_HOME}
+ENV ES_HOME /usr/share/elasticsearch
+WORKDIR ${ES_HOME}
 
-#RUN bin/plugin -i discovery-multicast
-#RUN bin/plugin -i analysis-icu
-#RUN bin/plugin -i analysis-phonetic
-#RUN bin/plugin -i http://dl.bintray.com/content/imotov/elasticsearch-plugins/org/elasticsearch/elasticsearch-analysis-morphology/2.0.0/elasticsearch-analysis-morphology-2.0.0.zip
+RUN bin/plugin install royrusso/elasticsearch-HQ
+RUN bin/plugin install discovery-multicast
+RUN bin/plugin install analysis-icu
+RUN bin/plugin install analysis-phonetic
+RUN bin/plugin install http://dl.bintray.com/content/imotov/elasticsearch-plugins/org/elasticsearch/elasticsearch-analysis-morphology/2.0.0/elasticsearch-analysis-morphology-2.0.0.zip
 
 
 
