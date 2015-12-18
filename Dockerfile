@@ -83,7 +83,8 @@ RUN bin/plugin install discovery-multicast
 RUN bin/plugin install analysis-icu
 RUN bin/plugin install analysis-phonetic
 RUN bin/plugin install http://dl.bintray.com/content/imotov/elasticsearch-plugins/org/elasticsearch/elasticsearch-analysis-morphology/2.0.0/elasticsearch-analysis-morphology-2.0.0.zip
-
+RUN ./elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/{2.0|2.1.1}
+RUN ./bin/plugin install https://github.com/NLPchina/elasticsearch-sql/releases/download/2.1.0/elasticsearch-sql-2.1.0.zip 
 
 
 
